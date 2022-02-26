@@ -12,3 +12,17 @@ For spring Data REST you only need 3 items
 RUN: right click on CruDdemoApplication.java "run as a Java app"
   Old--> Browser: http://localhost:8080/employees/  (not /api)
 Browser: On application.properties added "base-path=/magic-api"
+
+===========================
+Spring Data REST only uses ID on the URL ex: PUT http://localhost:8080/magic-api/employees/7
+============================
+REST Endpoints: we have Employee.java entity type, rest will do simple pluralized form of Entity type to lower case
+	and then adds "s" to the entity. http://localhost:8080/magic-api/employees/
+===========================
+Spring does not handle complex pluralized forms, 
+Solution: add new annotation @RepositoryRestResource(path="members") on class public interface EmployeeRepository extends..
+===========================
+data rest return first 20 elements, page size=20.ex: 8080/magic-api/employees?page=0,1
+More Info spring.data.rest.* on application.properties
+===========
+sorting: 8080/magic-api/employees?sort=lastName, desc, asc
