@@ -14,6 +14,7 @@ RUN: right click on CruDdemoApplication.java "run as a Java app"
 Browser: On application.properties added "base-path=/magic-api"
 
 ===========================
+srs/main/resources --> we specify path there and /entity+plural
 Spring Data REST only uses ID on the URL ex: PUT http://localhost:8080/magic-api/employees/7
 ============================
 REST Endpoints: we have Employee.java entity type, rest will do simple pluralized form of Entity type to lower case
